@@ -1,2 +1,2 @@
-# CaloriesCalculator
-Calories Calculator for Team project
+# Calories Calculator
+Calories Calculator API for Team project
