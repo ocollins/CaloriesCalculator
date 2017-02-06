@@ -4,4 +4,4 @@
 | Date | Task | Resource | Notes|
 |------|------|-------|------|
 |Week 1||| |
-| 2/05/17| Create Project Directory|  | |
+| 2/05/17| Create Project Directory|Olena Collins  | |
