@@ -8,7 +8,8 @@ consumed with food to develop effective weight management programs.
 
 This Calculator will show the users how many calories they used up while exercising.
 They will be able to select a type of exercise from a comprehensive list to provide accurate estimate. 
-The following formula will be used Total Calories Burned = METS x weight (kg) x time (hours) 
+The following formula will be used for the calculations:
+Total Calories Burned = METS x weight (kg) x time (hours) 
 Where METS is number of kcal / kg / hour and will be obtained for different physical activities from a DataBase table??? XML file???.  
 
 ##Project Goal:
