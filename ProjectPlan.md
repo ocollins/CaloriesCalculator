@@ -1,28 +1,35 @@
 # Project Plan
 
-### Week 1
+### Week 0
 - [X] Create project repository on GitHub
-- [ ] Complete Problem Statement
+- [ ] Complete Project documentation
 
-## Week 2
-- [ ] Begin project plan
-- [ ] Complete screen design 
+### Week 1
+- [X] Begin project plan
+- [ ] Develop screen design 
 - [ ] Create project structure in IntelliJ
 - [ ] Add project to repository
-- [ ] Time log entries
+- [ ] Progress log entries
 
-### Week 3
-- [ ] Time log entries
+### Week 2
+- [ ] Progress log entries
 - [ ] Set up logging
 - [ ] Set up unit testing
+- [ ] Create JSPs
+
+### Week 3
+- [ ] Create ??? modules
+- [ ] Create database and all tables/columns locally ??
+- [ ] Add Hibernate config ??
+- [ ] Add unit tests for DAO ??
+- [ ] Progress log entries
 
 ### Week 4
-- [ ] JSPs
-- [ ] Create database and all tables/columns locally
-- [ ] Add Hibernate config
-- [ ] Create DAO for Member crud
-- [ ] Add unit tests for DAO
-- [ ] Time log entries
+- [ ] Progress log entries
+- [ ] 
 
 ### Week 5
-- [ ] Time log entries
+- [ ] 
+
+### Week 6
+- [ ] Present the new API
