@@ -3,5 +3,7 @@
 
 | Date | Task | Resource | Notes|
 |------|------|-------|------|
-|Week 1||| |
+|Week ||| |
 | 2/05/17| Create Project Directory|Olena Collins  | |
+|Week 1||| |
+|||| |
