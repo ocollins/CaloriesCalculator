@@ -2,10 +2,10 @@
 
 ### Week 0
 - [X] Create project repository on GitHub
-- [ ] Complete Project documentation
 
 ### Week 1
 - [X] Begin project plan
+- [ ] Complete up README file
 - [ ] Develop screen design 
 - [ ] Create project structure in IntelliJ
 - [ ] Add project to repository
