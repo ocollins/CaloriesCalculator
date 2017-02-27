@@ -1,5 +1,5 @@
 # Calories Calculator
- Team project - REST API development
+##Team project - REST API development##
 
 As people are becoming more aware of the importance of daily workout and keeping their
 weight under control, it is helpful to provide information regarding calories
@@ -14,7 +14,7 @@ Where METS is number of kcal / kg / hour and will be obtained for different phys
 
 ##Project Goal:
 Create REST API to calculate total calorie expenditure for different sports activities.
-This API will enable third-party developers to build applications..
+This API will enable third-party developers to build applications, which will consume results of this API.
 
  
 
