@@ -5,8 +5,8 @@
 
 ### Week 1
 - [X] Begin project plan
-- [ ] Complete up README file
-- [ ] Create database and all tables/columns locally ??
+- [X] Complete up README file
+- [X] Create database and all tables/columns locally ??
 - [X] Create project structure in IntelliJ
 - [X] Add project to repository
 - [ ] Progress log entries
