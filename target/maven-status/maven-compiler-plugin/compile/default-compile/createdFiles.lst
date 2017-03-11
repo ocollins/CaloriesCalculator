@@ -1,0 +1,4 @@
+edu/matc/persistence/SessionFactoryProvider.class
+edu/matc/controller/placeholder.class
+edu/matc/entity/Activity.class
+edu/matc/persistence/ActivityDao.class
