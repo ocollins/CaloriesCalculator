@@ -7,43 +7,38 @@
       <Visible>1</Visible>
     </schema>
     <schema id="3" parent="1" name="information_schema"/>
-    <schema id="4" parent="1" name="mysql"/>
-    <schema id="5" parent="1" name="performance_schema"/>
-    <schema id="6" parent="1" name="phpmyadmin"/>
-    <schema id="7" parent="1" name="sys"/>
-    <schema id="8" parent="1" name="TENNIS_UNIVERSE"/>
-    <table id="9" parent="2" name="activity"/>
-    <column id="10" parent="9" name="id">
+    <table id="4" parent="2" name="activity"/>
+    <column id="5" parent="4" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="11" parent="9" name="name">
+    <column id="6" parent="4" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="12" parent="9" name="mets">
+    <column id="7" parent="4" name="mets">
       <Position>3</Position>
       <DataType>decimal(3,1)|0</DataType>
     </column>
-    <index id="13" parent="9" name="id_UNIQUE">
+    <index id="8" parent="4" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="14" parent="9" name="name_UNIQUE">
+    <index id="9" parent="4" name="name_UNIQUE">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="15" parent="9" name="PRIMARY">
+    <key id="10" parent="4" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="16" parent="9" name="id_UNIQUE">
+    <key id="11" parent="4" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="17" parent="9" name="name_UNIQUE">
+    <key id="12" parent="4" name="name_UNIQUE">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name_UNIQUE</UnderlyingIndexName>
     </key>
