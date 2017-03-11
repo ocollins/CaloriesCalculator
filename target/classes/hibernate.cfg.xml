@@ -10,8 +10,9 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/</property>
-        <property name="connection.username">root</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/calories_calculator</property>
+        <!--<property name="connection.username">root</property>-->
+        <property name="connection.username">appuser</property>
         <property name="connection.password">student</property>
         <!--<property name="connection.password">uBUs4XoxU9UsEw</property>-->
 
@@ -20,6 +21,7 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
 
         <!-- List the annotated entity class/es -->
         <mapping class="edu.matc.entity.Activity"/>

@@ -36,7 +36,7 @@ public class ActivityDaoTest {
         activityList = dao.getAllActivities();
 
         assertEquals("tennis", activityList.get(7).getName());
-        //logger.info("Total activities " + activityList.size());
+        logger.info("Total activities " + activityList.size());
 
         assertTrue("Did not extract any activites", dao.getAllActivities().size() > 0);
 

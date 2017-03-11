@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="calories_calculator@localhost" uuid="27634abd-ba8d-4169-b4e6-21ac69afecb8">
+    <data-source source="LOCAL" name="calories_calculator@localhost" uuid="80f8008a-a3ca-4098-b6b8-daf11dd7646f">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/calories_calculator</jdbc-url>
       <driver-properties>
