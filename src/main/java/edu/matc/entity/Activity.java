@@ -44,6 +44,19 @@ public class Activity {
     }
 
     /**
+     * Instantiates a new Activity.
+     *
+     * @param id   the id
+     * @param name the name
+     * @param mets the mets
+     */
+    public Activity(int id, String name, BigDecimal mets) {
+        this.id = id;
+        this.name = name;
+        this.mets = mets;
+    }
+
+    /**
      * Gets id.
      *
      * @return the id
