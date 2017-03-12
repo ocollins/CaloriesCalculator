@@ -134,3 +134,37 @@
 2017-03-11 09:49:21,235 3649 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
 2017-03-11 09:49:21,246 3660 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
 2017-03-11 09:49:22,879 5293 [main] INFO  edu.matc.persistence.ActivityDaoTest  - Total activities 11
+2017-03-11 10:05:49,352 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-03-11 10:05:49,500 148  [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-03-11 10:05:49,504 152  [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-03-11 10:05:49,507 155  [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-03-11 10:05:49,582 230  [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-03-11 10:05:49,582 230  [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-03-11 10:05:49,865 513  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-03-11 10:05:50,082 730  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-03-11 10:05:50,096 744  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/calories_calculator]
+2017-03-11 10:05:50,096 744  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=appuser, password=****}
+2017-03-11 10:05:50,097 745  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-03-11 10:05:50,106 754  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-03-11 10:05:51,879 2527 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-03-11 10:05:52,570 3218 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-03-11 10:05:52,582 3230 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-03-11 10:05:54,384 5032 [main] INFO  edu.matc.persistence.ActivityDaoTest  - Total activities 11
+2017-03-11 10:07:37,006 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-03-11 10:07:37,062 56   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-03-11 10:07:37,068 62   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-03-11 10:07:37,071 65   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-03-11 10:07:37,120 114  [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-03-11 10:07:37,123 117  [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-03-11 10:07:37,396 390  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-03-11 10:07:37,539 533  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-03-11 10:07:37,555 549  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/calories_calculator]
+2017-03-11 10:07:37,556 550  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=appuser, password=****}
+2017-03-11 10:07:37,557 551  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-03-11 10:07:37,559 553  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-03-11 10:07:38,190 1184 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-03-11 10:07:38,477 1471 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-03-11 10:07:38,490 1484 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-03-11 10:07:39,708 2702 [main] INFO  edu.matc.persistence.ActivityDaoTest  - Total activities 11
+2017-03-11 10:33:01,425 0    [main] INFO  edu.matc.service.CaloriesBurnedCalculatorTest  - Cals Burned: 1466.25
+2017-03-11 10:36:04,319 0    [main] INFO  edu.matc.service.CaloriesBurnedCalculatorTest  - Cals Burned: 1466.25
