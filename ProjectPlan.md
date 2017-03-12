@@ -9,18 +9,24 @@
 - [X] Create database and all tables/columns locally ??
 - [X] Create project structure in IntelliJ
 - [X] Add project to repository
-- [ ] Progress log entries
+- [X] Progress log entries
+- [X] Develop screen design
 
 ### Week 2
-- [ ] Progress log entries
-- [ ] Set up logging
-- [ ] Set up unit testing
-- [ ] Create JSPs
-- [ ] Develop screen design
+- [X] Progress log entries
+- [X] Set up logging
+- [X] Set up unit testing
+- [X] Create JSPs
+- [X] Add Hibernate config
+- [X] Add Activity entiry
+- [X] Add unit tests for Activity DAO
+- [ ] Create CaloriesBirnedCalculator business logic class
 
 ### Week 3
-- [ ] Create ??? modules
-- [ ] Add Hibernate config ??
+- [ ] Create REST modules
+- [ ] Add more entities for more functionality??
+- [ ] Add more DAOs for ?? entities
+- [ ] Add ??? business logic class
 - [ ] Add unit tests for DAO ??
 - [ ] Progress log entries
 
