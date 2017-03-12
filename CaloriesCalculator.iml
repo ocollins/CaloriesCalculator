@@ -27,6 +27,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="hibernate.cfg.xml" value="9e5ecaf1-5840-4456-92bd-d4ed4a9509a6" />
           <unit-entry name="src:main:resources:hibernate.cfg.xml" />
         </datasource-map>
         <naming-strategy-map />
