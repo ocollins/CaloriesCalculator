@@ -33,4 +33,25 @@ public class ActivityDao {
         return activities;
     }
 
+    /**
+     * Gets activity.
+     *
+     * @param id the id
+     * @return the activity
+     */
+    public Activity getActivity(int id) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Activity activity = null;
+
+        try {
+            activity = (Activity) session.get(Activity.class, id);
+        } catch (HibernateException he) {
+            logger.info("Hibernate Exception " + he);
+        } finally {
+            session.close();
+        }
+
+        return activity;
+    }
+
 }
