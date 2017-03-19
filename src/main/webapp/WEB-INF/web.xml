@@ -5,5 +5,24 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+  <!--<welcome-file-list>
+    <welcome-file>indexDispServlet</welcome-file>
+  </welcome-file-list>-->
+
+  <!--<servlet>-->
+    <!--<servlet-name>IndexDisplayServlet</servlet-name>-->
+    <!--<servlet-class>edu.matc.controller.IndexDispServlet</servlet-class>-->
+    <!--<load-on-startup>0</load-on-startup>-->
+  <!--</servlet>-->
+
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>IndexDisplayServlet</servlet-name>-->
+    <!--<url-pattern>/indexDispServlet</url-pattern>-->
+  <!--</servlet-mapping>-->
+
 
 </web-app>
+
+
+
+

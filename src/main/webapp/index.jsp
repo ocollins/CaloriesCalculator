@@ -13,7 +13,7 @@
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="css/index.css" rel="stylesheet" type="text/css"/>
-    <title>Fitness</title>
+    <title>Calories Calculator</title>
 </head>
 
 
@@ -22,6 +22,7 @@
 
     <div id="main_container_div">
         <h2 id="title_header">Calories Burned Calculator</h2>
+       <%--<p>${applicationScope.test}</p>--%>
         <div class="content_div">
             <div class="titlebox">What are calories?</div>
             <p class="info_p">A calorie is a measure of energy, just as a pound is a measure of weight
@@ -46,11 +47,11 @@
     </div>
 
 
-    <form action="" id="calories_form" method="post">
+    <form action="calculateCaloriesActionServlet" id="calories_form" method="get">
         <div id="user_info_div">
             <input type="text" name="" id="weight_text" value="Enter your weight" required>
             <select id="activity_select">
-                <option value="">Select exercise1</option>
+                <option value="1">Tennis</option>
                 <option value="">Select exercise2</option>
                 <option value="">Select exercise3</option>
                 <%--<c:forEach var="option" items="${}">
