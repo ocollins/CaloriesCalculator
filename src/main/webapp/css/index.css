@@ -5,116 +5,74 @@ body {
     background-color: rgb(232, 208, 148);
 }
 
-#headerimage {
-    /*border: 10px solid yellow;*/
-    margin: 1px 20px 10px;
-    float: left;
-    padding-left: 50px;
-}
-
-#phone{
-    font-size: 40px;
-    float: left;
-    padding-top: 10px;
-    font-weight: bold;
-    color: darkslategrey;
-}
-
-#menu {
-    height: 40px;
-    margin: auto;
-    width: 60%;
-    clear: left;
-}
-
-#menu ul {
-    margin: auto;
-    padding: 0;
-
-}
-
-#menu li {
-    list-style: none;
-    float: left;
-    border-radius: 10px;
-    margin:0 0 0.25em 0;
-    background-color: rgb(71, 110, 44);
-    border: solid 4px rgba(232, 208, 148, 0.5);
+#title_header {
     text-align: center;
-    width: 18%;
-    margin: 2px;
+    margin-top: 70px;
+    font-size: 60px;
 }
 
-li {
-    text-align: center;
-}
-
-#menu ul li a:hover {
-    background-color: rgb(112, 144, 126);
-}
-
-#menu a {
-    display: block;
-    float: left;
-    height: 20px;
-    padding: 10px 30px 10px 30px;
+.titlebox{
+    float:left;
+    padding:0 5px;
+    margin:-30px 0 0 30px;
+    background-color: rgb(232, 208, 148);
     font-size: 20px;
     font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    margin-left: 4px;
 }
 
+.content_div{
+    border:2px solid grey;
+    border-radius: 10px;
+    padding:15px;
+    float: left;
+    width: 30%;
+    margin-left: 5px;
+    font-size: 20px;
+    height: 200px;
+}
+
+.content_div2{
+    border:2px solid grey;
+    border-radius: 10px;
+    padding:15px;
+    float: left;
+    width: 30%;
+    margin-left: 5px;
+    font-size: 20px;
+    height: 100px;
+}
 #main_container_div {
     padding-bottom: 30px;
     width: 60%;
     margin: auto;
 }
 
-.content_div{
-    border:2px solid grey;
-    border-radius: 10px;
-    padding:10px;
-    float: left;
-    width: 30%;
-    margin-left: 5px;
-}
-
 #instructions_div {
     margin: auto;
 
 }
-.titlebox{
-    float:left;
-    padding:0 5px;
-    margin:-20px 0 0 30px;
-    background-color: rgb(232, 208, 148);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/*.info_p {
-    float:left;
-    padding:0 5px;
-    margin:-20px 0 0 30px;
-    background:#fff;
-}*/
 
 #user_info_div {
     text-align: center;
     width: 60%;
     margin: auto;
+    clear: left;
+    padding-top: 30px;
 }
 
-#weight_text, #activity_select, #duration_text {
+#calories_form {
+    clear: left;
+
+}
+
+#weight_text, #activity_select, #duration_select
+{
     float: left;
-    width: 30%;
+    width: 90%;
     margin: 10px;
     border-radius: 7px;
     padding: 5px;
+
 }
 
 #radio_div {
@@ -127,12 +85,6 @@ li {
     clear: left;
 }
 
-#title_header {
-    clear: left;
-    text-align: center;
-    margin-top: 70px;
-    font-size: 60px;
-}
 
 #submit_button {
     clear: left;
@@ -140,16 +92,7 @@ li {
     border-radius: 5px;
     background-color: lightgrey;
     padding: 7px;
-}
-
-#result_p {
-    text-align: center;
-    padding: 10px;
-    float: left;
-    border: solid 1px grey;
-    border-radius: 10px;
-    margin-left: 30px;
-    background-color: whitesmoke;
+    font-weight: bold;
 }
 
 #result_div {
@@ -159,15 +102,25 @@ li {
     padding-top: 50px;
 }
 
-#tennis_fit1_image, #tennis_fit2_image {
+#result_p {
+    text-align: center;
+    padding: 10px;
+    /*float: left;*/
+    border: solid 1px grey;
+    border-radius: 10px;
+    /*margin-left: 30px;*/
+    background-color: whitesmoke;
+    width: 30%;
+    margin: auto;
+}
+
+#footer_div {
+    width: 60%;
+    margin: auto;
+}
+#tennis_fit1_image, #tennis_fit2_image, #dummy {
     width: 30%;
     float: left;
-    padding:40px;
+    padding:8px;
 }
 
-footer {
-    text-align: center;
-    margin-top: 230px;
-    clear: left;
-
-}

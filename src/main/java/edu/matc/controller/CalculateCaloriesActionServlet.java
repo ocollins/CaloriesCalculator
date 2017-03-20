@@ -3,11 +3,13 @@ package edu.matc.controller;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -41,25 +43,33 @@ public class CalculateCaloriesActionServlet extends HttpServlet {
         //response.setContentType("text/html");
 
         //Remove the old session
-        //HttpSession session = request.getSession(true);
-        //session.invalidate();
+        HttpSession session = request.getSession(true);
+        session.invalidate();
 
-        logger.info("$$$$$$$$$$$$$$$$$$$$$$$$$ Inside Calories action servlet");
-        logger.info("$$$$$$$$$$$$$$$$$$$$$$ gender " + request.getParameter("gender"));
+        //Create new session
+        session = request.getSession(true);
+
+        logger.info("$$$$$$$$$$$$$$$$$$$$$$$$$ Getting into Calories action servlet");
         int activity = Integer.parseInt(request.getParameter("activity_select"));
-
+        int weight = Integer.parseInt(request.getParameter("weight_text"));
+        double duration = Double.parseDouble(request.getParameter("duration_select"));
 
         Client client = ClientBuilder.newClient();
+        String url = "http://localhost:8080/CaloriesCalculator/activities/text/";
+        url = url + activity + "/" + weight + "/" + duration;
         WebTarget target =
-                client.target("http://localhost:8080/CaloriesCalculator/activities/text/1/70/1.5");
+                client.target(url);
+        logger.info(url);
         String calcResult = target.request().get(String.class);
+        ServletContext context = getServletContext();
+        context.setAttribute("CaloriesResult",  calcResult);
+        logger.info("Checking context attribute " + context.getAttribute("CaloriesResult"));
         //response = target.request().get(String.class);
         logger.info("Returning result " + calcResult);
-        logger.info("$$$$$$$$$$$$$$$$$$$$$$$$$ Inside Calories action servlet");
 
-//        String url = "/add_member_serv.jsp";
-//        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-//        dispatcher.forward(request, response);
+        String responceUrl = "/index.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(responceUrl);
+        dispatcher.forward(request, response);
 
     }
 }

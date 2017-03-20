@@ -18,7 +18,7 @@ public class ActivitiesRestTest {
     private final Logger logger = Logger.getLogger(this.getClass());
     Client client;
     String url;
-
+//
 //    @Before
 //    public void setup() {
 //        client = ClientBuilder.newClient();

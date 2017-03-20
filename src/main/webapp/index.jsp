@@ -22,7 +22,8 @@
 
     <div id="main_container_div">
         <h2 id="title_header">Calories Burned Calculator</h2>
-       <%--<p>${applicationScope.test}</p>--%>
+       <p>${applicationScope.test}</p>
+        <p>${AllActivities}</p>
         <div class="content_div">
             <div class="titlebox">What are calories?</div>
             <p class="info_p">A calorie is a measure of energy, just as a pound is a measure of weight
@@ -47,33 +48,64 @@
     </div>
 
 
-    <form action="calculateCaloriesActionServlet" id="calories_form" method="get">
-        <div id="user_info_div">
-            <input type="text" name="" id="weight_text" value="Enter your weight" required>
-            <select id="activity_select">
-                <option value="1">Tennis</option>
-                <option value="">Select exercise2</option>
-                <option value="">Select exercise3</option>
-                <%--<c:forEach var="option" items="${}">
-                    <option value="">selection</option>
-                </c:forEach>--%>
-            </select>
-            <input type="text" name="" id="duration_text" value="Enter minutes" required />
+    <div id="user_info_div">
+        <form action="calculateCaloriesActionServlet" id="calories_form" method="get">
+                <div class="content_div2">
+                    <div class="titlebox">Enter your weight in kg</div>
+                    <p class="info_p"><input type="text" name="weight_text" id="weight_text" value="" required>
+                    </p>
+                </div>
+                <div class="content_div2">
+                    <div class="titlebox">Select activity</div>
+                    <p class="info_p">
+                        <select id="activity_select" name="activity_select">
+                            <option value="1">Tennis</option>
+                            <option value="">Select exercise2</option>
+                            <option value="">Select exercise3</option>
+                        <%--<c:forEach var="option" items="${}">
+                        <option value="">selection</option>
+                        </c:forEach>--%>
+                        </select>
+                    </p>
+                </div>
+                <div class="content_div2">
+                    <div class="titlebox">Select duration</div>
+                    <p class="info_p">
+                        <select id="duration_select" name="duration_select">
+                            <option value="0.5">half hour</option>
+                            <option value="1">one hour</option>
+                            <option value="1.5">hour and half</option>
+                            <option value="2.0">two hours</option>
+                            <option value="2.5">two and half hours</option>
+                            <option value="3.0">three hours</option>
+                            <option value="3.5">three and half hours</option>
+                            <option value="4.0">four hours</option>
+                            <option value="4.5">four and half hours</option>
+                            <option value="5.0">five hours</option>
+                            <option value="6.5">five and half hours</option>
+                        </select>
+                    </p>
+                </div>
             <div id="radio_div">
                 <input type="radio" name="gender" value="male" id="genderm_radio" checked> Male
                 <input type="radio" name="gender" value="female" id="genderf_radio" checked> Female<br>
             </div>
             <input type="submit" id="submit_button" value="Calculate Calories">
-        </div>
-    </form>
+          </form>
+    </div>
 </div>
 <div id="result_div">
-    <p><img src="images/tennis_fit1.jpg" alt="Fitness Picture" id="tennis_fit1_image"></img></p>
-    <p id="result_p">Calories displayed here</p>
-    <p><img src="images/tennis_fit2.jpg" alt="Fitness Picture" id="tennis_fit2_image"></img></p>
+    <c:if test="${not empty CaloriesResult}">
+        <p id="result_p">${CaloriesResult}</p>
+    </c:if>
 </div>
 
+<div id="footer_div">
+    <img src="images/tennis_fit1.jpg" alt="Fitness Picture" id="tennis_fit1_image"></img>
+    <p id="dummy"></p>
+    <img src="images/tennis_fit2.jpg" alt="Fitness Picture" id="tennis_fit2_image"></img>
 </div>
+
 </body>
 
 </html>
