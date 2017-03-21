@@ -12,9 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Path("/activities")
 public class ActivitiesRest {
@@ -35,6 +33,20 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).build();
     }
 
+    @GET
+    @Produces("text/plain")
+    @Path("/list")
+    public Response getAllActivitiesList() {
+        Map <Integer, String> activitiesList = new TreeMap<>();
+
+        //output += "\nActivity\t\tMET(s)\n";
+        for (Activity activity: activityList
+                ) {
+            activitiesList.put(activity.getId(), activity.getName());
+            //output += activity.getName() + "\t\t" + activity.getMets() + "\n";
+        }
+        return Response.status(200).entity(activitiesList).build();
+    }
     //Three parameters required to determine calories burned. Activity, Weight and Duration in hours
 
     @GET

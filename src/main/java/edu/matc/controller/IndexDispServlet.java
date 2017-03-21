@@ -26,11 +26,11 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
-@WebServlet(
-        name = "indexDispServlet",
-        urlPatterns = { "/indexDispServlet" }
-        //loadOnStartup = 1
-)
+//@WebServlet(
+//        name = "indexDispServlet",
+//        urlPatterns = { "/indexDispServlet" }
+//        //loadOnStartup = 1
+//)
 
 public class IndexDispServlet extends HttpServlet {
     private final Logger logger = Logger.getLogger(this.getClass());
@@ -38,7 +38,7 @@ public class IndexDispServlet extends HttpServlet {
     public void init() throws ServletException{
         logger.info("******************In the INIT of the index display servlet************");
         ServletContext context = getServletContext();
-        context.setAttribute("test", "TestString");
+        context.setAttribute("test", "TestStringFrom Display");
 
     }
 
@@ -59,8 +59,8 @@ public class IndexDispServlet extends HttpServlet {
 
         Client client = ClientBuilder.newClient();
         WebTarget target =
-                client.target("http://localhost:8080/CaloriesCalculator/activities");
-        String activitiesList = target.request().get(String.class);
+                client.target("http://localhost:8080/CaloriesCalculator/activities/list");
+        TreeMap activitiesList = target.request().get(TreeMap.class);
         //response = target.request().get(String.class);
         logger.info("Returning activities " + response);
 

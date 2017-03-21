@@ -23,13 +23,13 @@ public class ContextListener implements ServletContextListener {
         logger.info("####################The application started");
 
         ServletContext context = event.getServletContext();
-        context.setAttribute("test", "TestString");
+        //context.setAttribute("test", "TestString");
 
-        Client client = ClientBuilder.newClient();
-        String url = "http://localhost:8080/CaloriesCalculator/activities";
-        WebTarget target = client.target(url);
-        String response = target.request().get(String.class);
-        context.setAttribute("AllActivities", response);
+//        Client client = ClientBuilder.newClient();
+//        String url = "http://localhost:8080/CaloriesCalculator/activities";
+//        WebTarget target = client.target(url);
+//        String response = target.request().get(String.class);
+//        context.setAttribute("AllActivities", response);
     }
 
     @Override

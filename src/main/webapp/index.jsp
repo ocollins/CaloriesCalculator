@@ -23,7 +23,7 @@
     <div id="main_container_div">
         <h2 id="title_header">Calories Burned Calculator</h2>
        <p>${applicationScope.test}</p>
-        <p>${AllActivities}</p>
+        <p>${activitiesList}</p>
         <div class="content_div">
             <div class="titlebox">What are calories?</div>
             <p class="info_p">A calorie is a measure of energy, just as a pound is a measure of weight
@@ -59,12 +59,12 @@
                     <div class="titlebox">Select activity</div>
                     <p class="info_p">
                         <select id="activity_select" name="activity_select">
-                            <option value="1">Tennis</option>
-                            <option value="">Select exercise2</option>
-                            <option value="">Select exercise3</option>
-                        <%--<c:forEach var="option" items="${}">
-                        <option value="">selection</option>
-                        </c:forEach>--%>
+                            <%--<option value="1">Tennis</option>--%>
+                            <%--<option value="">Select exercise2</option>--%>
+                            <%--<option value="">Select exercise3</option>--%>
+                            <c:forEach var="option" items="${activitiesList}">
+                                <option value="">selection</option>
+                            </c:forEach>
                         </select>
                     </p>
                 </div>
