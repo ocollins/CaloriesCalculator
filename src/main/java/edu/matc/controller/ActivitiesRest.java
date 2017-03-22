@@ -36,6 +36,21 @@ public class ActivitiesRest {
     }
 
     //Three parameters required to determine calories burned. Activity, Weight and Duration in hours
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/list")
+    public Response getActivitiesJSON() {
+        Map <Integer, String> output = Maps.newHashMap();
+
+        for (Activity activity: activityList
+             ) {
+            output.put(activity.getId(), activity.getName());
+        }
+
+        return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
+    }
+
+    //TODO add 4th request param called Unit as string = lb or kg
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -111,6 +126,7 @@ public class ActivitiesRest {
         CaloriesBurnedRequest requestLess = new CaloriesBurnedRequest();
         requestLess.setWeight(weight);
         requestLess.setDuration(duration * LESS_MODIFIER);
+        //requestLess.setUnit()
         calulatedBurns.put(duration * LESS_MODIFIER, burned(requestLess, activityID));
 
         CaloriesBurnedRequest request = new CaloriesBurnedRequest();

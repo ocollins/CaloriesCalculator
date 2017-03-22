@@ -3,7 +3,17 @@ package edu.matc.service.calculator;
 public class CaloriesBurnedRequest {
 
     private Double weight;
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     private Double duration;
+    private String unit;
 
     public CaloriesBurnedRequest() {}
 
