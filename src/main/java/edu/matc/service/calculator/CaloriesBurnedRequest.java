@@ -2,25 +2,21 @@ package edu.matc.service.calculator;
 
 public class CaloriesBurnedRequest {
 
-    private Double weight;
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
     private Double duration;
     private String unit;
+    private Double weight;
 
     public CaloriesBurnedRequest() {}
 
-    public CaloriesBurnedRequest(Double weight, Double duration) {
+    public CaloriesBurnedRequest(Double weight, Double duration, String unit) {
         this.weight = weight;
         this.duration = duration;
+        this.unit = unit;
     }
+
+    public String getUnit() { return unit; }
+
+    public void setUnit(String unit) { this.unit = unit; }
 
     public Double getWeight() {
         return weight;
@@ -41,8 +37,9 @@ public class CaloriesBurnedRequest {
     @Override
     public String toString() {
         return "CaloriesBurnedRequest{" +
-                "weight=" + weight +
-                ", duration=" + duration +
+                "duration=" + duration +
+                ", unit='" + unit + '\'' +
+                ", weight=" + weight +
                 '}';
     }
 }

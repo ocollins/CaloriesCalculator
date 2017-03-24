@@ -25,15 +25,20 @@ public class CalculatorService {
     public Double getCaloriesBurned(int id) {
         Activity activity = dao.getActivity(id);
         Double mets = activity.getMets().doubleValue();
-        return cbCalc.calculateCaloriesBurned(mets, convertToKG(caloriesBurnedRequest.getWeight(), caloriesBurnedRequest.getUnit()), caloriesBurnedRequest.getDuration());
+        Double duration = caloriesBurnedRequest.getDuration();
+        Double weight = caloriesBurnedRequest.getWeight();
+
+        Double convertedWeight;
+        if (caloriesBurnedRequest.getUnit().equals("lb")) {
+            convertedWeight = convertToKg(weight);
+        } else {
+            convertedWeight = weight;
+        }
+
+        return cbCalc.calculateCaloriesBurned(mets, convertedWeight, duration);
     }
 
-    public Double convertToKG(Double weight, String unit) {
-        if (unit == "kg") {
-            return weight;
-        } else {
-            //convert me
-            return 1.0;
-        }
+    public Double convertToKg(Double weight) {
+        return (weight / 2.2);
     }
 }
