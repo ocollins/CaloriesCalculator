@@ -6,6 +6,12 @@ import edu.matc.service.calculator.CalculatorService;
 import edu.matc.service.calculator.CaloriesBurnedRequest;
 import jersey.repackaged.com.google.common.collect.Maps;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import javax.json.stream.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import org.apache.log4j.Logger;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -15,6 +21,7 @@ import javax.ws.rs.core.Response;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.io.IOException;
 
 @Path("/activities")
 public class ActivitiesRest {
@@ -22,6 +29,7 @@ public class ActivitiesRest {
     private static final double EXTRA_MODIFIER = 2.0;
     private ActivityDao activityDao= new ActivityDao();
     private List<Activity> activityList = activityDao.getAllActivities();
+    private Logger logger = Logger.getLogger(this.getClass());
 
     @GET
     @Produces("text/plain")
@@ -40,17 +48,34 @@ public class ActivitiesRest {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/list")
     public Response getActivitiesJSON() {
-        Map <Integer, String> output = Maps.newHashMap();
+        ObjectMapper mapper = new ObjectMapper();
+        String output = "{\"activities\":[";
+        int lastElementId = activityList.size();
 
-        for (Activity activity: activityList
-             ) {
-            output.put(activity.getId(), activity.getName());
+        try {
+            for (Activity activity : activityList) {
+                logger.info(activity.getName());
+                output = output + mapper.writeValueAsString(activity);
+                if (activity.getId() == lastElementId) {
+                    output = output + "]}";
+                } else {
+                    output = output + ",";
+                }
+                logger.info(output);
+            }
+
+        } catch (JsonGenerationException jge) {
+            logger.info(jge);
+        } catch (JsonMappingException jme) {
+            logger.info(jme);
+        } catch (IOException ioe) {
+            logger.info(ioe);
         }
 
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
 
-    //TODO add 4th request param called Unit as string = lb or kg
+        //TODO add 4th request param called Unit as string = lb or kg
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)

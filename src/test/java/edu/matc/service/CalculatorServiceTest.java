@@ -1,5 +1,6 @@
 package edu.matc.service;
 
+import edu.matc.controller.ActivitiesRest;
 import edu.matc.service.calculator.CalculatorService;
 import edu.matc.service.calculator.CaloriesBurnedRequest;
 import org.apache.log4j.Logger;
@@ -21,12 +22,21 @@ public class CalculatorServiceTest {
         calculatorService = new CalculatorService(caloriesBurnedRequest);
     }
 
+//    @Test
+//    public void testGetCaloriesBurned() {
+//        int id = 1;
+//        Double expected = 318.75;
+//        Double actual = calculatorService.getCaloriesBurned(id);
+//        logger.info("Calories burned:::::::::::: " + actual.toString());
+//        Assert.assertTrue("Calories burned calculated incorrectly for id=" + id, actual.equals(expected));
+//    }
+//
     @Test
-    public void testGetCaloriesBurned() {
-        int id = 1;
-        Double expected = 318.75;
-        Double actual = calculatorService.getCaloriesBurned(id);
-        logger.info("Calories burned: " + actual.toString());
-        Assert.assertTrue("Calories burned calculated incorrectly for id=" + id, actual.equals(expected));
+    public void testGetActivitiesJSON() {
+        ActivitiesRest activitiesRest = new ActivitiesRest();
+        logger.info("Testing JSON **********************" + activitiesRest.getActivitiesJSON());
+        logger.info("***********************************");
+
     }
 }
+
