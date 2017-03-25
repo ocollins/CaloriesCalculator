@@ -27,9 +27,15 @@ import java.io.IOException;
 public class ActivitiesRest {
     private static final double LESS_MODIFIER = 0.5;
     private static final double EXTRA_MODIFIER = 2.0;
-    private ActivityDao activityDao= new ActivityDao();
-    private List<Activity> activityList = activityDao.getAllActivities();
+    private ActivityDao activityDao;
+    private List<Activity> activityList;
     private Logger logger = Logger.getLogger(this.getClass());
+
+    public ActivitiesRest() {
+        activityDao = new ActivityDao();
+        activityList = activityDao.getAllActivities();
+
+    }
 
     @GET
     @Produces("text/plain")
@@ -54,7 +60,6 @@ public class ActivitiesRest {
 
         try {
             for (Activity activity : activityList) {
-                logger.info(activity.getName());
                 output = output + mapper.writeValueAsString(activity);
                 if (activity.getId() == lastElementId) {
                     output = output + "]}";

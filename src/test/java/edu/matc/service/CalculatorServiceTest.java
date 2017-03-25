@@ -31,12 +31,6 @@ public class CalculatorServiceTest {
 //        Assert.assertTrue("Calories burned calculated incorrectly for id=" + id, actual.equals(expected));
 //    }
 //
-    @Test
-    public void testGetActivitiesJSON() {
-        ActivitiesRest activitiesRest = new ActivitiesRest();
-        logger.info("Testing JSON **********************" + activitiesRest.getActivitiesJSON());
-        logger.info("***********************************");
-
-    }
+//
 }
 
