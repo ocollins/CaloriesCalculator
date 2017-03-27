@@ -39,8 +39,7 @@ public class CalculatorServiceTest {
         logger.info("Calories burned (kg input): " + actual.toString());
         Assert.assertTrue("Calories burned calculated incorrectly for id=" + id, actual.equals(expected));
     }
-
-<<<<<<< HEAD
+    
 //    @Test
 //    public void testGetCaloriesBurned() {
 //        int id = 1;
@@ -51,7 +50,7 @@ public class CalculatorServiceTest {
 //    }
 //
 //
-=======
+
     @Test
     public void testGetCaloriesBurnedLb() {
         int id = 1;
@@ -80,6 +79,5 @@ public class CalculatorServiceTest {
         logger.info("Conversion from lb to kg: " + actual.toString());
         Assert.assertTrue("Incorrect conversion", actual.equals(weightKg));
     }
->>>>>>> rest
 }
 
