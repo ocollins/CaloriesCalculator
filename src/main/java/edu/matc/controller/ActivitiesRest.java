@@ -6,7 +6,6 @@ import edu.matc.service.calculator.CalculatorService;
 import edu.matc.service.calculator.CaloriesBurnedRequest;
 import jersey.repackaged.com.google.common.collect.Maps;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.json.stream.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -75,7 +74,6 @@ public class ActivitiesRest {
 
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
-
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
