@@ -50,19 +50,18 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
 
-    //TODO add 4th request param called Unit as string = lb or kg
-
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("/text/{activity}/{weight}/{duration}")
+    @Path("/text/{activity}/{weight}/{duration}/{unit}")
     public Response getCaloriesBurnedText(
             @PathParam("activity") int activityID,
             @PathParam("weight") double weight,
-            @PathParam("duration") double duration) {
+            @PathParam("duration") double duration,
+            @PathParam("unit") String unit) {
 
         String output = "Calories Burned\t\tDuration\n";
 
-        Map<Double, Double> results = buildResults(activityID, weight, duration);
+        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
 
         for (Map.Entry result: results.entrySet()
              ) {
@@ -75,16 +74,17 @@ public class ActivitiesRest {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/json/{activity}/{weight}/{duration}")
+    @Path("/text/{activity}/{weight}/{duration}/{unit}")
     public Response getCaloriesBurnedJSON(
             @PathParam("activity") int activityID,
             @PathParam("weight") double weight,
-            @PathParam("duration") double duration) {
+            @PathParam("duration") double duration,
+            @PathParam("unit") String unit) {
 
         Map<String, Map> output = Maps.newHashMap();
         int i = 0;
 
-        Map<Double, Double> results = buildResults(activityID, weight, duration);
+        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
 
         for (Map.Entry result: results.entrySet()
                 ) {
@@ -100,16 +100,17 @@ public class ActivitiesRest {
 
     @GET
     @Produces(MediaType.TEXT_HTML)
-    @Path("/html/{activity}/{weight}/{duration}")
+    @Path("/text/{activity}/{weight}/{duration}/{unit}")
     public Response getCaloriesBurnedHTML(
             @PathParam("activity") int activityID,
             @PathParam("weight") double weight,
-            @PathParam("duration") double duration) {
+            @PathParam("duration") double duration,
+            @PathParam("unit") String unit) {
 
         String output = "<html><body><h1><table>";
         output += "<tr><th>Calories Burned</th><th>Duration</th></tr>";
 
-        Map<Double, Double> results = buildResults(activityID, weight, duration);
+        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
 
         for (Map.Entry result: results.entrySet()
                 ) {
@@ -120,23 +121,25 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).type(MediaType.TEXT_HTML).build();
     }
 
-    private Map<Double, Double> buildResults(int activityID, double weight, double duration) {
+    private Map<Double, Double> buildResults(int activityID, double weight, double duration, String unit) {
         Map<Double, Double> calulatedBurns = new HashMap<>();
 
         CaloriesBurnedRequest requestLess = new CaloriesBurnedRequest();
         requestLess.setWeight(weight);
         requestLess.setDuration(duration * LESS_MODIFIER);
-        //requestLess.setUnit()
+        requestLess.setUnit(unit);
         calulatedBurns.put(duration * LESS_MODIFIER, burned(requestLess, activityID));
 
         CaloriesBurnedRequest request = new CaloriesBurnedRequest();
         request.setDuration(duration);
         request.setWeight(weight);
+        request.setUnit(unit);
         calulatedBurns.put(duration, burned(request, activityID));
 
         CaloriesBurnedRequest requestExtra = new CaloriesBurnedRequest();
         requestExtra.setWeight(weight);
         requestExtra.setDuration(duration * EXTRA_MODIFIER);
+        requestExtra.setUnit(unit);
         calulatedBurns.put(duration * EXTRA_MODIFIER, burned(requestExtra, activityID));
 
         return calulatedBurns;
