@@ -28,7 +28,7 @@ import java.util.TreeMap;
 public class ActivitiesRest {
     private static final double LESS_MODIFIER = 0.5;
     //private static final double EXTRA_MODIFIER = 2.0;
-    private static final double EXTRA_MODIFIER = 0.3; //20 minutes
+    private static final double EXTRA_MODIFIER = 0.333; //20 minutes
     private ActivityDao activityDao = new ActivityDao();;
     private List<Activity> activityList = activityDao.getAllActivities();;
     private Logger logger = Logger.getLogger(this.getClass());
