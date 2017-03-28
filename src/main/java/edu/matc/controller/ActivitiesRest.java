@@ -21,12 +21,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.io.IOException;
+import java.util.TreeMap;
 
 @Path("/activities")
 public class ActivitiesRest {
     private static final double LESS_MODIFIER = 0.5;
     //private static final double EXTRA_MODIFIER = 2.0;
-    private static final double EXTRA_MODIFIER = 0.3; //20 minutes
+    private static final double EXTRA_MODIFIER = 0.333; //20 minutes
     private ActivityDao activityDao = new ActivityDao();;
     private List<Activity> activityList = activityDao.getAllActivities();;
     private Logger logger = Logger.getLogger(this.getClass());
@@ -43,8 +44,7 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).build();
     }
 
-    //Four parameters required to determine calories burned. Activity, Weight, Duration in hours
-    // and Weight Unit (pounds or kilograms)
+    //Return a list of possible activities in JSON format
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/list")
@@ -61,7 +61,7 @@ public class ActivitiesRest {
                 } else {
                     output = output + ",";
                 }
-                logger.info(output);
+
             }
 
         } catch (JsonGenerationException jge) {
@@ -75,6 +75,9 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
 
+
+    //Four parameters required to determine calories burned. Activity, Weight, Duration in hours
+    //and Weight Unit (pounds or kilograms)
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/text/{activity}/{weight}/{duration}/{unit}")
@@ -106,7 +109,7 @@ public class ActivitiesRest {
             @PathParam("duration") double duration,
             @PathParam("unit") String unit) {
 
-        Map<String, Map> output = Maps.newHashMap();
+        Map<String, Map> output = Maps.newTreeMap();
         int i = 0;
 
         Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
@@ -147,7 +150,7 @@ public class ActivitiesRest {
     }
 
     private Map<Double, Double> buildResults(int activityID, double weight, double duration, String unit) {
-        Map<Double, Double> calulatedBurns = new HashMap<>();
+        Map<Double, Double> calulatedBurns = new TreeMap<>();
 
         CaloriesBurnedRequest requestLess = new CaloriesBurnedRequest();
         requestLess.setWeight(weight);

@@ -39,17 +39,6 @@ public class CalculatorServiceTest {
         logger.info("Calories burned (kg input): " + actual.toString());
         Assert.assertTrue("Calories burned calculated incorrectly for id=" + id, actual.equals(expected));
     }
-    
-//    @Test
-//    public void testGetCaloriesBurned() {
-//        int id = 1;
-//        Double expected = 318.75;
-//        Double actual = calculatorService.getCaloriesBurned(id);
-//        logger.info("Calories burned:::::::::::: " + actual.toString());
-//        Assert.assertTrue("Calories burned calculated incorrectly for id=" + id, actual.equals(expected));
-//    }
-//
-//
 
     @Test
     public void testGetCaloriesBurnedLb() {
