@@ -23,9 +23,11 @@ public class CalculatorService {
     }
 
     public Double getCaloriesBurned(int id) {
+        Double duration = caloriesBurnedRequest.getDuration();
+
         Activity activity = dao.getActivity(id);
         Double mets = activity.getMets().doubleValue();
-        Double duration = caloriesBurnedRequest.getDuration();
+
         Double weight = caloriesBurnedRequest.getWeight();
 
         Double convertedWeight;
