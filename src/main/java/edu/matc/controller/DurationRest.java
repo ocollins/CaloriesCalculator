@@ -55,7 +55,7 @@ public class DurationRest {
             @PathParam("unit") String unit) {
         Double results = buildResults(activityID, weight, calories, unit);
 
-        String output = "Duration: " + results;
+        String output = "{\"Duration \":" + results + "}";
 
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
