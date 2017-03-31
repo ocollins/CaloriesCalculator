@@ -6,7 +6,7 @@ public class CaloriesBurnedCalculator {
         return (mets * weight * duration);
     }
 
-    public Double calculateDuration(Double mets, Double weight, Double calories) {
-        return (calories /(mets * weight));
+    public Double calculateDuration(Double mets, Double weight, int calories) {
+        return Math.round(calories /(mets * weight)*100)/100.0;
     }
 }
