@@ -40,60 +40,26 @@ public class DurationRest {
             @PathParam("unit") String unit) {
         Double results = buildResults(activityID, weight, calories, unit);
 
-        String output = "Duration:\tresults\n";
+        String output = "Duration: " + results;
 
         return Response.status(200).entity(output).type(MediaType.TEXT_PLAIN).build();
     }
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/json/{activity}/{weight}/{calories}/{unit}")
+    public Response getDurationJSON(
+            @PathParam("activity") int activityID,
+            @PathParam("weight") double weight,
+            @PathParam("calories") int calories,
+            @PathParam("unit") String unit) {
+        Double results = buildResults(activityID, weight, calories, unit);
 
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/json/{activity}/{weight}/{duration}/{unit}")
-//    public Response getCaloriesBurnedJSON(
-//            @PathParam("activity") int activityID,
-//            @PathParam("weight") double weight,
-//            @PathParam("duration") double duration,
-//            @PathParam("unit") String unit) {
-//
-//        Map<String, Map> output = Maps.newTreeMap();
-//        int i = 0;
-//
-//        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
-//
-//        for (Map.Entry result: results.entrySet()
-//                ) {
-//            Map<String, Double> detail = Maps.newHashMap();
-//            detail.put("Calories Burned:", (double) result.getValue());
-//            detail.put("Duration:", (double) result.getKey());
-//            output.put("Calculation " + i + ":" , detail);
-//            i++;
-//        }
-//
-//        return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
-//    }
+        String output = "Duration: " + results;
 
-//    @GET
-//    @Produces(MediaType.TEXT_HTML)
-//    @Path("/html/{activity}/{weight}/{duration}/{unit}")
-//    public Response getCaloriesBurnedHTML(
-//            @PathParam("activity") int activityID,
-//            @PathParam("weight") double weight,
-//            @PathParam("duration") double duration,
-//            @PathParam("unit") String unit) {
-//
-//        String output = "<html><body><h1><table>";
-//        output += "<tr><th>Calories Burned</th><th>Duration</th></tr>";
-//
-//        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
-//
-//        for (Map.Entry result: results.entrySet()
-//                ) {
-//            output += "<tr><td>" + result.getValue() + "</td><td>" + result.getKey() + "</td>";
-//        }
-//
-//        output += "</table></h1></body></html>";
-//        return Response.status(200).entity(output).type(MediaType.TEXT_HTML).build();
-//    }
+        return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
+    }
+
 
     private Double buildResults(int activityID, double weight, int calories, String unit) {
         DurationRequest durationRequest = new DurationRequest();
@@ -103,7 +69,7 @@ public class DurationRest {
 
         CalculatorService service = new CalculatorService(durationRequest);
 
-        return service.getCaloriesBurned(activityID);
+        return service.getDuration(activityID);
     }
 
 }
