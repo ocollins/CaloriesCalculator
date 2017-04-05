@@ -87,7 +87,7 @@ public class CalculatorService {
             convertedWeight = weight;
         }
 
-        return cbCalc.calculateDuration(mets, weight, calories);
+        return cbCalc.calculateDuration(mets, convertedWeight, calories);
 
     }
 

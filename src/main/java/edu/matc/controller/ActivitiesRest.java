@@ -10,11 +10,6 @@ import edu.matc.service.calculator.CalculatorService;
 import edu.matc.service.calculator.CaloriesBurnedRequest;
 import jersey.repackaged.com.google.common.collect.Maps;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import javax.json.stream.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import org.apache.log4j.Logger;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -22,19 +17,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.io.IOException;
-import java.util.TreeMap;
+import java.util.*;
 
 @Path("/activities")
 public class ActivitiesRest {
     private static final double LESS_MODIFIER = 0.5;
     private static final double EXTRA_MODIFIER = 0.333; //20 minutes
-    private ActivityDao activityDao = new ActivityDao();;
-    private List<Activity> activityList = activityDao.getAllActivities();;
-    private Logger logger = Logger.getLogger(this.getClass());
+    private ActivityDao activityDao = new ActivityDao();
+    private List<Activity> activityList = activityDao.getAllActivities();
 
     @GET
     @Produces("text/plain")
@@ -53,27 +43,20 @@ public class ActivitiesRest {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/list")
     public Response getActivitiesJSON() {
-        ObjectMapper mapper = new ObjectMapper();
-        String output = "{\"activities\":[";
-        int lastElementId = activityList.size();
+        Map<String, ArrayList> output = Maps.newTreeMap();
 
-        try {
+            ArrayList<Map> activities = new ArrayList<>();
             for (Activity activity : activityList) {
-                output = output + mapper.writeValueAsString(activity);
-                if (activity.getId() == lastElementId) {
-                    output = output + "]}";
-                } else {
-                    output = output + ",";
-                }
+
+                Map<String, String> act = Maps.newHashMap();
+                act.put("activityID", String.valueOf(activity.getId()));
+                act.put("activityTitle", activity.getName());
+
+                activities.add(act);
             }
 
-        } catch (JsonGenerationException jge) {
-            logger.info(jge);
-        } catch (JsonMappingException jme) {
-            logger.info(jme);
-        } catch (IOException ioe) {
-            logger.info(ioe);
-        }
+            output.put("Activities", activities);
+
 
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }

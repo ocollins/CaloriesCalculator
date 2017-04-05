@@ -18,6 +18,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -55,7 +56,8 @@ public class DurationRest {
             @PathParam("unit") String unit) {
         Double results = buildResults(activityID, weight, calories, unit);
 
-        String output = "{\"Duration \":" + results + "}";
+        Map <String, Double> output = new HashMap<>();
+        output.put("Duration:", results);
 
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
