@@ -18,6 +18,7 @@ public class CaloriesBurnedCalculatorTest {
     private Double mets;
     private Double weight;
     private Double duration;
+    private int calories;
 
     @Before
     public void setup() {
@@ -29,6 +30,7 @@ public class CaloriesBurnedCalculatorTest {
         mets = activity.getMets().doubleValue();
         weight = 85.0;
         duration = 1.5;
+        calories = 400;
     }
 
     @Test
@@ -38,4 +40,13 @@ public class CaloriesBurnedCalculatorTest {
         logger.info("Cals Burned: " + actual.toString());
         Assert.assertTrue("Calories burned calculation incorrect", actual.equals(expected));
     }
+
+    @Test
+    public void testCalculateDuration() {
+        Double expected = 1.88;
+        Double actual = cbCalc.calculateDuration(mets, weight, calories);
+        logger.info("Hours to exercise " + actual.toString());
+        Assert.assertEquals("Incorrect hours ", expected, actual);
+    }
+
 }
