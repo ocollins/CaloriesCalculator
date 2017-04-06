@@ -1,6 +1,6 @@
 # Calories Calculator API 
 ## User Specs
-| Date | Task | 
+|  |  | 
 |------|------|
 |**API Endpoint**|http://??/CaloriesCalculator?|
 |**Primary Category**| Health/Sports|
