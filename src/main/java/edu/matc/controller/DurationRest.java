@@ -3,6 +3,7 @@ package edu.matc.controller;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.matc.entity.Activity;
+import edu.matc.error.ResponseError;
 import edu.matc.persistence.ActivityDao;
 import edu.matc.service.calculator.CalculatorService;
 import edu.matc.service.calculator.CaloriesBurnedRequest;
@@ -39,7 +40,14 @@ public class DurationRest {
             @PathParam("weight") double weight,
             @PathParam("calories") int calories,
             @PathParam("unit") String unit) {
-        Double results = buildResults(activityID, weight, calories, unit);
+        Double results;
+        try {
+            results  = buildResults(activityID, weight, calories, unit);
+        } catch (Exception e) {
+            ResponseError error = new ResponseError();
+            String message = error.getResponseErrorMessage();
+            return Response.status(500).entity(message).build();
+        }
 
         String output = "Duration: " + results;
 
@@ -54,7 +62,14 @@ public class DurationRest {
             @PathParam("weight") double weight,
             @PathParam("calories") int calories,
             @PathParam("unit") String unit) {
-        Double results = buildResults(activityID, weight, calories, unit);
+        Double results;
+        try {
+            results  = buildResults(activityID, weight, calories, unit);
+        } catch (Exception e) {
+            ResponseError error = new ResponseError();
+            String message = error.getResponseErrorMessage();
+            return Response.status(500).entity(message).build();
+        }
 
         Map <String, Double> output = new HashMap<>();
         output.put("Duration:", results);

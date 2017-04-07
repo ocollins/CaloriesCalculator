@@ -16,7 +16,8 @@
 |--------------------------------------------|
 |**Response Status Codes**| |
 | | |
-
+|--------------------------------------------|
+|**Error Handling**|Message is displayed to the user informing them of the various paths and path variables needed in order to consume the service.|
  
 
 

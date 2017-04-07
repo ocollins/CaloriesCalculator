@@ -5,6 +5,7 @@ package edu.matc.controller;
 */
 
 import edu.matc.entity.Activity;
+import edu.matc.error.ResponseError;
 import edu.matc.persistence.ActivityDao;
 import edu.matc.service.calculator.CalculatorService;
 import edu.matc.service.calculator.CaloriesBurnedRequest;
@@ -29,6 +30,12 @@ public class ActivitiesRest {
     @GET
     @Produces("text/plain")
     public Response getAllActivities() {
+        if (activityList == null || activityList.isEmpty()) {
+            ResponseError error = new ResponseError();
+            String message = error.getResponseErrorMessage();
+            return Response.status(500).entity(message).build();
+        }
+
         String output = "";
         output += "\nActivity\t\tMET(s)\n";
         for (Activity activity: activityList
@@ -44,6 +51,12 @@ public class ActivitiesRest {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/list")
     public Response getActivitiesJSON() {
+        if (activityList == null || activityList.isEmpty()) {
+            ResponseError error = new ResponseError();
+            String message = error.getResponseErrorMessage();
+            return Response.status(500).entity(message).build();
+        }
+
         Map<String, ArrayList> output = Maps.newTreeMap();
 
         ArrayList<Map> activities = new ArrayList<>();
@@ -57,7 +70,6 @@ public class ActivitiesRest {
         }
 
         output.put("Activities", activities);
-
 
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
@@ -76,7 +88,14 @@ public class ActivitiesRest {
 
         String output = "Calories Burned\t\tDuration\n";
 
-        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
+        Map<Double, Double> results;
+        try {
+            results = buildResults(activityID, weight, duration, unit);
+        } catch (Exception e) {
+            ResponseError error = new ResponseError();
+            String message = error.getResponseErrorMessage();
+            return Response.status(500).entity(message).build();
+        }
 
         for (Map.Entry result: results.entrySet()
              ) {
@@ -99,7 +118,14 @@ public class ActivitiesRest {
         Map<String, Map> output = Maps.newTreeMap();
         int i = 0;
 
-        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
+        Map<Double, Double> results;
+        try {
+            results = buildResults(activityID, weight, duration, unit);
+        } catch (Exception e) {
+            ResponseError error = new ResponseError();
+            String message = error.getResponseErrorMessage();
+            return Response.status(500).entity(message).build();
+        }
 
         for (Map.Entry result: results.entrySet()
                 ) {
@@ -125,7 +151,14 @@ public class ActivitiesRest {
         String output = "<html><body><h1><table>";
         output += "<tr><th>Calories Burned</th><th>Duration</th></tr>";
 
-        Map<Double, Double> results = buildResults(activityID, weight, duration, unit);
+        Map<Double, Double> results;
+        try {
+            results = buildResults(activityID, weight, duration, unit);
+        } catch (Exception e) {
+            ResponseError error = new ResponseError();
+            String message = error.getResponseErrorMessage();
+            return Response.status(500).entity(message).build();
+        }
 
         for (Map.Entry result: results.entrySet()
                 ) {
