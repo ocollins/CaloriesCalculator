@@ -29,6 +29,7 @@
 | /activities/list | returns JSON formatted list of activities and associated METs (intended for consumers population of dropdown menu) |
 
 ### Calories burned Calculations (response will include calculation for 1/2 of specified duration, and duration + 20 minutes)
+/activities/{response}/{activityID}/{weight}/{duration}/{unit}
 | parameter | format | accepted unit | required? | description |
 | ------- | --------- | ------ | --------- | ------------- |
 | response | string | text, json, html | yes | indicates the desired format for the api response |
@@ -38,6 +39,7 @@
 | unit | string | lb or kg | yes | specifies the unit used for weight |
 
 ### Duration Calculations
+/duration/{response}/{activityID}/{weight}/{caloriesToBurn}/{unit}
 | parameter | format | accepted unit | required? | description |
 | ------- | --------- | ------ | --------- | ---------------- |
 | response | string | text or json | yes | indicates the desired format for the duration calculator | 
