@@ -48,6 +48,14 @@
 
 
 ## Examples
-Acivity 1 - Walking, performed by a 200 lb person for 2 hours, response request as JSON (desired caluclation how many calories burned):
- * /activities/json/1/200/2.0/lb
+
+### Example 1 - Calories Burned Request
+Acivity 1 - Walking, performed by a 200 lb person for 2 hours, response request as JSON.
+ * request: /activities/json/1/200/2.0/lb
+ * response: {"Calculation 0:":{"Calories Burned:":227.27272727272725,"Duration:":1.0},"Calculation 1:":{"Calories Burned:":454.5454545454545,"Duration:":2.0},"Calculation 2:":{"Calories Burned:":530.2272727272727,"Duration:":2.333}}
+ 
+### Example 2 - Duration Request
+Activity 3 - Calisthenics performed by a 110 kg person looking to burn 300 calories, response as plain text.
+ * /duration/text/3/110/300/kg
+ * response: Duration: 0.68 hours
 
