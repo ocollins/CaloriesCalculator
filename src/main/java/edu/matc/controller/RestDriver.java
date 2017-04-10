@@ -13,8 +13,6 @@ public class RestDriver extends Application {
 
     /**
      * Created by student on 2/26/17.
-     *
-     * @author O Collins
      */
 //Defines the base URI for all resource URIs.
 

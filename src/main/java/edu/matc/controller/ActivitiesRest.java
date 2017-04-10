@@ -16,6 +16,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
@@ -51,6 +53,8 @@ public class ActivitiesRest {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/list")
     public Response getActivitiesJSON() {
+        //Testing only
+        //activityList = null;
         if (activityList == null || activityList.isEmpty()) {
             ResponseError error = new ResponseError();
             String message = error.getResponseErrorMessage();
@@ -72,6 +76,7 @@ public class ActivitiesRest {
         output.put("Activities", activities);
 
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
+
     }
 
 

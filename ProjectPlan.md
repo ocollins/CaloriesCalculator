@@ -16,26 +16,27 @@
 - [X] Progress log entries
 - [X] Set up logging
 - [X] Set up unit testing
-- [X] Create JSPs
 - [X] Add Hibernate config
-- [X] Add Activity entiry
+- [X] Add Activity entity
+- [X] Add Activity DAO
 - [X] Add unit tests for Activity DAO
-- [ ] Create CaloriesBirnedCalculator business logic class
+- [X] Create CaloriesBirnedCalculator business logic class
 
 ### Week 3
-- [ ] Create REST modules
-- [ ] Add more entities for more functionality??
-- [ ] Add more DAOs for ?? entities
-- [ ] Add ??? business logic class
-- [ ] Add unit tests for DAO ??
-- [ ] Progress log entries
+- [X] Create REST Calculate Calories modules
+- [X] Create Calculator Consumer JSPs
+- [X] Adjust Calculator Consumer to call the API
+- [X] Progress log entries
 
 ### Week 4
-- [ ] Progress log entries
-- [ ] Create API entry point (servlet)
+- [X] Create REST Calculate Duration business logic classes
+- [X] Add Calculate Duration logic to the calculator consumer
+- [X] Progress log entries
 
 ### Week 5
-- [ ] Discuss Presentation Responsibilities
+- [X] Discuss Presentation Responsibilities
+- [X] Add errror handling
+- [X] Update documentation
 
 ### Week 6
 - [ ] Present the new API

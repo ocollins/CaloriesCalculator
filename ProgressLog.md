@@ -10,15 +10,17 @@
 | 3/06/2017 | Build out Readme / Project Plan | Mike | |
 |Week 2||||
 |3/10/2017|Added Activity entity and DAO|Olena||
-|3/11/2017|Added index.jsp, index.css|||
+|3/11/2017|Added index.jsp, index.css|Olena||
 |3/12/2017|Added Calculator service and tests, updated .gitignore|Ben||
 |Week 3||||
-|3/16/17|updated .gitignore|Mike||
-|3/16/17|Added ActivitesRest.java with responses|Mike||
+|3/16/2017|updated .gitignore|Mike||
+|3/16/2017|Added ActivitesRest.java with responses|Mike||
 |Week 4 ||||
-|3/21/17|Added rest parameter logic for weight unit|Mike||
+|3/21/2017|Added REST parameter logic for weight unit|Mike||
+|3/23/2017|Added REST to calculate duration|Olena|||
+|3/24/2017|Added duration REST to the consumer|Olena|||
 |Week 5 ||||
-|3/27/17|Fixed JSON response for list of all activities|Mike||
+|3/27/2017|Fixed JSON response for list of all activities|Mike||
 |Week 6 ||||
 |4/4/17| Fixed JSON calculation/duration responses|Mike||
 |Week 7 ||||
