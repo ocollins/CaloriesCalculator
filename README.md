@@ -51,10 +51,10 @@ This API will enable third-party developers to build applications, which will co
     * HTML
     
 ### Design
-
- * Screen Designs (Mockup)
  * [DB Design](https://github.com/ocollins/CaloriesCalculator/tree/master/db)
  
 ### [Project Plan](https://github.com/ocollins/CaloriesCalculator/blob/master/ProjectPlan.md)
 
 ### [Progress Log](https://github.com/ocollins/CaloriesCalculator/blob/master/ProgressLog.md)
+
+### [User Guide](https://github.com/ocollins/CaloriesCalculator/blob/master/UserGuide.md)
