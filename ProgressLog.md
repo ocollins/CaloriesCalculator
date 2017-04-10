@@ -18,12 +18,13 @@
 |Week 4 ||||
 |3/21/2017|Added REST parameter logic for weight unit|Mike||
 |3/23/2017|Added REST to calculate duration|Olena|||
+|3/23/2017|Updated the Calculator service to convert between 'kg' and 'lb'. Added relevant tests.|Ben||
 |3/24/2017|Added duration REST to the consumer|Olena|||
 |Week 5 ||||
 |3/27/2017|Fixed JSON response for list of all activities|Mike||
 |Week 6 ||||
 |4/4/17| Fixed JSON calculation/duration responses|Mike||
+|4/6/2017|Incorporated error-handling. Updated documentation.|Ben||
 |Week 7 ||||
 |4/10/17| Updated UserGuide for usage/examples|Mike||
-
-
+|4/10/2017|Small adjustments to error message based on group feedback. Updated documentation|Ben||

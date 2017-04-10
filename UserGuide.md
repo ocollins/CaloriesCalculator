@@ -17,7 +17,7 @@
 |**Response Status Codes**| |
 | 500 | internal server error - usually due to a parameter being sent in the wrong format, or an activity id not in db |
 |--------------------------------------------|
-|**Error Handling**|Message is displayed to the user informing them of the various paths and path variables needed in order to consume the service.|
+|**Error Handling**|Message is displayed to the user informing them of the error along with the status code and a link to the documentation for further explanation.|
  
 
 ## Usage
