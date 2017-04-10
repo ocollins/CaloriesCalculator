@@ -13,4 +13,15 @@
 |3/11/2017|Added index.jsp, index.css|||
 |3/12/2017|Added Calculator service and tests, updated .gitignore|Ben||
 |Week 3||||
+|3/16/17|updated .gitignore|Mike||
+|3/16/17|Added ActivitesRest.java with responses|Mike||
+|Week 4 ||||
+|3/21/17|Added rest parameter logic for weight unit|Mike||
+|Week 5 ||||
+|3/27/17|Fixed JSON response for list of all activities|Mike||
+|Week 6 ||||
+|4/4/17| Fixed JSON calculation/duration responses|Mike||
+|Week 7 ||||
+|4/10/17| Updated UserGuide for usage/examples|Mike||
+
 
