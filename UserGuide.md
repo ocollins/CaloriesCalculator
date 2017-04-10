@@ -2,7 +2,7 @@
 ## User Specs
 |  |  | 
 |------|------|
-|**API Endpoint**|http://52.14.26.13:8080/CaloriesCalculator?|
+|**API Endpoint**|http://52.14.26.13:8080/CaloriesCalculator|
 |**Primary Category**| Health/Sports|
 |**Terms Of Service URL**|Open source|
 |**Scope**|Single purpose API|
@@ -15,7 +15,7 @@
 |**Developers**|Ben Nisler; Mike Young; Olena Collins|
 |--------------------------------------------|
 |**Response Status Codes**| |
-| | |
+| 500 | internal server error - usually due to a parameter being sent in the wrong format, or an activity id not in db |
 |--------------------------------------------|
 |**Error Handling**|Message is displayed to the user informing them of the various paths and path variables needed in order to consume the service.|
  
@@ -28,7 +28,7 @@
 | /activities | returns plain text (table formatted) list of activities and associated METs |
 | /activities/list | returns JSON formatted list of activities and associated METs (intended for consumers population of dropdown menu) |
 
-### Calories burned Calculations
+### Calories burned Calculations (response will include calculation for 1/2 of specified duration, and duration + 20 minutes)
 | parameter | format | accepted unit | required? | description |
 | ------- | --------- | ------ | --------- | ------------- |
 | response | string | text, json, html | yes | indicates the desired format for the api response |
@@ -59,3 +59,6 @@ Activity 3 - Calisthenics performed by a 110 kg person looking to burn 300 calor
  * /duration/text/3/110/300/kg
  * response: Duration: 0.68 hours
 
+
+## Errors
+If any of the required parameters receives a value that is unexpected, or unknown an HTTP500 response message will be returned. This will include a breif description of usage (as seen above) for clarification.
