@@ -21,15 +21,33 @@
  
 
 ## Usage
-| lists | |
+
+### Lists
+|  path |     |
+| ------- | --------- |
 | /activities | returns plain text (table formatted) list of activities and associated METs |
 | /activities/list | returns JSON formatted list of activities and associated METs (intended for consumers population of dropdown menu) |
-| calculations | |
-| | |
+
+### Calories burned Calculations
+| parameter | format | accepted unit | required? | description |
+| ------- | --------- | ------ | --------- | ------------- |
+| response | string | text, json, html | yes | indicates the desired format for the api response |
+| activity id | int | 0-? | yes | ID from activities list |
+| weight | double | 0-? | yes | weight of athelete in lbs or kgs |
+| duration | double | 0-? | yes | duration as expressed in fraction of an hour e.g. 30 minutes = 0.5 |
+| unit | string | lb or kg | yes | specifies the unit used for weight |
+
+### Duration Calculations
+| parameter | format | accepted unit | required? | description |
+| ------- | --------- | ------ | --------- | ---------------- |
+| response | string | text or json | yes | indicates the desired format for the duration calculator | 
+| activity id | int | 0-? | yes | ID from activities list |
+| weight | double | 0-? | yes | weight of athelete in lbs or kgs |
+| calories | int | 0-? | yes | specifies the desired number of calories to burn for the selected activity |
+| unit | string | lb or kg | yes | specifies the unit used for weight |
 
 
-
-
-
-
+## Examples
+Acivity 1 - Walking, performed by a 200 lb person for 2 hours, response request as JSON (desired caluclation how many calories burned):
+ * /activities/json/1/200/2.0/lb
 
