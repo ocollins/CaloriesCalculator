@@ -1,5 +1,5 @@
 # Calories Calculator
-##Team project - REST API development##
+## Team project - REST API development ##
 
 ### Pitch
 Ever wonder how many calories you burn doing a specific activity, or wonder how the duration of that activity affects the number of calories burned? #CaloriesCalculator# lets you input only a few bits of information like weight, activity and duration and will return the number burned. 
@@ -16,7 +16,7 @@ This Calculator will show the users how many calories they used up while exercis
 They will be able to select a type of exercise from a list to provide accurate estimate. 
 The following formula will be used for the calculations:
 Total Calories Burned = METS x weight (kg) x time (hours) 
-Where METS is number of kcal / kg / hour and will be obtained for different physical activities from a DataBase table?.  
+Where METS is number of kcal / kg / hour and will be obtained for different physical activities from a DataBase table.  
 
 -- optional 
 Secondary calculation, plus 20 minutes modifier to show additional calories burned for a little more efford
@@ -44,8 +44,7 @@ This API will enable third-party developers to build applications, which will co
     * text
     * HTML
     
-### Design
- * [DB Design](https://github.com/ocollins/CaloriesCalculator/tree/master/db)
+### Design [DB Design](https://github.com/ocollins/CaloriesCalculator/tree/master/db)
  
 ### [Project Plan](https://github.com/ocollins/CaloriesCalculator/blob/master/ProjectPlan.md)
 
