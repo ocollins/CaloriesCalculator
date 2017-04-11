@@ -2,7 +2,7 @@
 ## Team project - REST API development ##
 
 ### Pitch
-Ever wonder how many calories you burn doing a specific activity, or wonder how the duration of that activity affects the number of calories burned? #CaloriesCalculator# lets you input only a few bits of information like weight, activity and duration and will return the number burned. 
+Ever wonder how many calories you burn doing a specific activity, or wonder how the duration of that activity affects the number of calories burned? # CaloriesCalculator # lets you input only a few bits of information like weight, activity and duration and will return the number burned. 
 If you want to know how long you need to exercise to burn X number of calories, Calories Calculator can help with that too.
 
 -- optional 
