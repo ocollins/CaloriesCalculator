@@ -6,9 +6,6 @@ package edu.matc.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/**
- * Created by student on 3/3/17.
- */
 @Entity
 @Table(name = "activity", schema = "calories_calculator")
 public class Activity {

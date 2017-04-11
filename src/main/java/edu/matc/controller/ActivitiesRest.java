@@ -22,6 +22,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
 
+/**
+ * The type Activities rest.
+ */
 @Path("/activities")
 public class ActivitiesRest {
     private static final double LESS_MODIFIER = 0.5;
@@ -29,6 +32,11 @@ public class ActivitiesRest {
     private ActivityDao activityDao = new ActivityDao();
     private List<Activity> activityList = activityDao.getAllActivities();
 
+    /**
+     * Gets all activities.
+     *
+     * @return the all activities
+     */
     @GET
     @Produces("text/plain")
     public Response getAllActivities() {
@@ -47,8 +55,12 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).build();
     }
 
-    //Return a list of possible activities in JSON format
-    //Return a list of possible activities in JSON format
+    /**
+     * Gets activities json.
+     *
+     * @return the activities json
+     */
+//Return a list of possible activities in JSON format
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/list")
@@ -80,6 +92,15 @@ public class ActivitiesRest {
     }
 
 
+    /**
+     * Gets calories burned text.
+     *
+     * @param activityID the activity id
+     * @param weight     the weight
+     * @param duration   the duration
+     * @param unit       the unit
+     * @return the calories burned text
+     */
     //Four parameters required to determine calories burned. Activity, Weight, Duration in hours
     //and Weight Unit (pounds or kilograms)
     @GET
@@ -111,6 +132,15 @@ public class ActivitiesRest {
     }
 
 
+    /**
+     * Gets calories burned json.
+     *
+     * @param activityID the activity id
+     * @param weight     the weight
+     * @param duration   the duration
+     * @param unit       the unit
+     * @return the calories burned json
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/json/{activity}/{weight}/{duration}/{unit}")
@@ -144,6 +174,15 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).type(MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     * Gets calories burned html.
+     *
+     * @param activityID the activity id
+     * @param weight     the weight
+     * @param duration   the duration
+     * @param unit       the unit
+     * @return the calories burned html
+     */
     @GET
     @Produces(MediaType.TEXT_HTML)
     @Path("/html/{activity}/{weight}/{duration}/{unit}")
@@ -174,6 +213,15 @@ public class ActivitiesRest {
         return Response.status(200).entity(output).type(MediaType.TEXT_HTML).build();
     }
 
+    /**
+     * Calls calories burned methods and stores results in a Map.
+     *
+     * @param activityID the activity id
+     * @param weight     the weight
+     * @param duration   the duration
+     * @param unit       the unit
+     * @return the calories burned Map
+     */
     private Map<Double, Double> buildResults(int activityID, double weight, double duration, String unit) {
         Map<Double, Double> calulatedBurns = new TreeMap<>();
 
@@ -198,6 +246,13 @@ public class ActivitiesRest {
         return calulatedBurns;
     }
 
+    /**
+     * Calls calories burned methods
+     *
+     * @param request the CaloriesBurnedRequest
+     * @param activityID   Activity ID
+     * @return the calories burned double
+     */
     private double burned(CaloriesBurnedRequest request, int activityID) {
         CalculatorService service = new CalculatorService(request);
         return service.getCaloriesBurned(activityID);

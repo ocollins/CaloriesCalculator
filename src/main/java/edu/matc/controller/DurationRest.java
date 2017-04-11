@@ -1,4 +1,8 @@
 package edu.matc.controller;
+/**
+ * Calculate excercise duration API
+ * @Author CaloriesCalculator team
+ */
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -78,6 +82,15 @@ public class DurationRest {
     }
 
 
+    /**
+     * Call duration calculation methods
+     *
+     * @param activityID the activity id
+     * @param weight     the weight
+     * @param calories   the calories
+     * @param unit       the unit
+     * @return the exercise duration as double
+     */
     private Double buildResults(int activityID, double weight, int calories, String unit) {
         DurationRequest durationRequest = new DurationRequest();
         durationRequest.setWeight(weight);

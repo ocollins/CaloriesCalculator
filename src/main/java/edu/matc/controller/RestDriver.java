@@ -11,12 +11,7 @@ import java.util.Set;
 @ApplicationPath("/")
 public class RestDriver extends Application {
 
-    /**
-     * Created by student on 2/26/17.
-     */
-//Defines the base URI for all resource URIs.
-
-
+    //Defines the base URI for all resource URIs.
     //The method returns a non-empty collection with classes, that must be included in the published JAX-RS application
     @Override
     public Set<Class<?>> getClasses() {

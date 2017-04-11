@@ -22,9 +22,11 @@
 |3/24/2017|Added duration REST to the consumer|Olena|||
 |Week 5 ||||
 |3/27/2017|Fixed JSON response for list of all activities|Mike||
+|3/28/2017|Modified consumer to use updated response from REST API||||
 |Week 6 ||||
-|4/4/17| Fixed JSON calculation/duration responses|Mike||
+|4/4/2017| Fixed JSON calculation/duration responses|Mike||
 |4/6/2017|Incorporated error-handling. Updated documentation.|Ben||
+|4/6/2017|Updated documentation|Olena|||
 |Week 7 ||||
-|4/10/17| Updated UserGuide for usage/examples|Mike||
+|4/10/2017| Updated UserGuide for usage/examples|Mike||
 |4/10/2017|Small adjustments to error message based on group feedback. Updated documentation|Ben||
